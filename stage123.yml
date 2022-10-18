@@ -6,4 +6,4 @@ stages:
     - name: System.Debug
       value: true
     jobs:
-      - template: myfolder/task.yml@MainYaml
+  #    - template: myfolder/task.yml@MainYaml
