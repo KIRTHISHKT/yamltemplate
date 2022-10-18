@@ -1,0 +1,9 @@
+stages:
+  - stage: mlops_deploy_code_dev
+    #condition: eq(variables['Build.Reason'], 'PullRequest')
+    displayName: mlops_deploy_code_dev
+    variables:
+    - name: System.Debug
+      value: true
+    jobs:
+      - template: myfolder/task.yml@ResourceTrigger
