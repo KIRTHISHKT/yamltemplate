@@ -3,6 +3,8 @@ parameters:
    type: object
 jobs:
  - job:
+   variables:
+     - ${{ parameters.variableFiles }}
    steps:
      - checkout: yamltemplate
      - checkout: self
