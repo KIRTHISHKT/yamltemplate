@@ -1,0 +1,14 @@
+jobs:
+ - job:
+   steps:
+     - checkout: yamltemplate
+     - checkout: self
+     - task: PowerShell@2  #added comment to PR branch
+       inputs:
+         targetType: 'inline'
+         script: |
+           # Write your PowerShell commands here.
+           
+           Write-Host "Hello World"
+           Write-Host "$(Build.SourceBranch)"
+       #  pwsh: true
