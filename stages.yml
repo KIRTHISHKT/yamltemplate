@@ -25,4 +25,7 @@ stages:
     - name: System.Debug
       value: true
     jobs:
-      - template: myfolder/task.yml@ResTrig
+      - template: task.yml
+        parameters:
+          variableFiles:
+            - template: /myfolder/config_dev.yml@ResTrig
