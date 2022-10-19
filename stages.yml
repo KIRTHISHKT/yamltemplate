@@ -1,4 +1,4 @@
-stages
+stages:
   - stage: mlops_stage2
     #condition: eq(variables['Build.Reason'], 'PullRequest')
     displayName: mlops_stage2
