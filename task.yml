@@ -16,5 +16,5 @@ jobs:
            
            Write-Host "Hello World"
            Write-Host "$(Build.SourceBranch)"
-           Write-Host "$(experiment_name)"
+           Write-Host ${{ variables.experiment_name }}
        #  pwsh: true
