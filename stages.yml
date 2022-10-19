@@ -7,3 +7,22 @@ stages:
       value: true
     jobs:
       - template: myfolder/task.yml@ResTrig
+  - stage: mlops_stage2
+    #condition: eq(variables['Build.Reason'], 'PullRequest')
+    displayName: mlops_stage2
+    variables:
+    - name: System.Debug
+      value: true
+    jobs:
+     - job:
+       steps:
+        # - checkout: KIRTHISHKT/yamltemplate
+         - task: PowerShell@2  #added comment to PR branch
+           inputs:
+             targetType: 'inline'
+             script: |
+               # Write your PowerShell commands here.
+               
+               Write-Host "Hello World"
+               Write-Host "$(Build.SourceBranch)"
+           #  pwsh: true
