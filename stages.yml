@@ -22,8 +22,9 @@ stages:
     condition: eq(variables['Build.Reason'], 'PullRequest')
     displayName: mlops_deploy_code_dev
     variables:
-    - name: System.Debug
-      value: true
+      - name: System.Debug
+        value: true
+      - template: /myfolder/config_dev.yml@ResTrig
     jobs:
       - template: task.yml
         parameters:
