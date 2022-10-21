@@ -8,7 +8,8 @@ stages:
     jobs:
      - job:
        steps:
-        # - checkout: KIRTHISHKT/yamltemplate
+         - checkout: yamltemplate
+         - checkout: self
          - task: PowerShell@2  #added comment to PR branch
            inputs:
              targetType: 'inline'
