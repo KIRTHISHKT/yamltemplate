@@ -18,15 +18,15 @@ stages:
                Write-Host "Hello World"
                Write-Host "$(Build.SourceBranch)"
            #  pwsh: true
-#  - stage: mlops_deploy_code_dev
-#    condition: eq(variables['Build.Reason'], 'PullRequest')
-#    displayName: mlops_deploy_code_dev
-#    variables:
-#      - name: System.Debug
-#        value: true
-#      - template: /myfolder/config_dev.yml@ResTrig
-#    jobs:
-#      - template: task.yml
-#        parameters:
-#          variableFiles:
-#            - template: /myfolder/config_dev.yml@ResTrig
+  - stage: mlops_deploy_code_dev
+    condition: eq(variables['Build.Reason'], 'PullRequest')
+    displayName: mlops_deploy_code_dev
+    variables:
+      - name: System.Debug
+        value: true
+      - template: /myfolder/config_dev.yml@ResTrig
+    jobs:
+      - template: task.yml
+        parameters:
+          variableFiles:
+            - template: /myfolder/config_dev.yml@ResTrig
