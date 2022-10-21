@@ -6,8 +6,8 @@ jobs:
    variables:
      - ${{ parameters.variableFiles }}
    steps:
-     - checkout: yamltemplate
-     - checkout: self
+     #- checkout: yamltemplate
+     #- checkout: self
      - task: PowerShell@2  #added comment to PR branch
        inputs:
          targetType: 'inline'
